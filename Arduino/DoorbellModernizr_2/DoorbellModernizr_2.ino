@@ -188,6 +188,8 @@ void setup() {
  
   Serial.begin(115200);
   Serial.println();
+  Serial.println("Doorbell modernizr 2");
+  Serial.println("Firmware version 1.0");
 
   pinMode(doorbellPin, INPUT_PULLUP);
   pinMode(12, INPUT_PULLUP);
@@ -213,9 +215,8 @@ void setup() {
         configFile.readBytes(buf.get(), size);
         DynamicJsonBuffer jsonBuffer;
         JsonObject& json = jsonBuffer.parseObject(buf.get());
-//        json.printTo(Serial);
         if (json.success()) {
-          Serial.println("\nparsed config file json");
+          Serial.println("parsed config file json");
 
           strcpy(mqtt_server, json["mqtt_server"]);
           strcpy(mqtt_port, json["mqtt_port"]);
