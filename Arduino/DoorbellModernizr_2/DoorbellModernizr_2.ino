@@ -1,5 +1,5 @@
 /***************************************************************************
- Code to use with MQTT wifi doorbell, see https://www.tindie.com/products/ErikLemcke/mqtt--wifi-doorbell-with-esp8266/
+ Code to use with doorbell, modernizr2 , see https://www.tindie.com/products/ErikLemcke/mqtt--wifi-doorbell-with-esp8266/
  Created by Erik Lemcke 12-05-2020
 
 
@@ -258,7 +258,7 @@ void setup() {
   wifiManager.addParameter(&custom_mqtt_username);
   wifiManager.addParameter(&custom_mqtt_password);
 
-  WiFiManagerParameter custom_text1("<p>Fill the folowing field with your MQTT topic for home assistant</p>");
+  WiFiManagerParameter custom_text1("<p>Fill the folowing field with your MQTT topic for Home assistant</p>");
   wifiManager.addParameter(&custom_text1);
   
   wifiManager.addParameter(&custom_mqtt_topic);
@@ -271,7 +271,7 @@ void setup() {
   WiFiManagerParameter custom_text3("<p>Fill the folowing field with your itemId for OpenHAB</p>");
   wifiManager.addParameter(&custom_text3);
 
- wifiManager.addParameter(&custom_oh_itemid);
+  wifiManager.addParameter(&custom_oh_itemid);
 
   //fetches ssid and pass and tries to connect
   //if it does not connect it starts an access point with the specified name
