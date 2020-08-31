@@ -80,7 +80,6 @@ void configModeCallback (WiFiManager *myWiFiManager) {
 void handleRoot() {
   Serial.println("Config page is requested");
   String addy = server.client().remoteIP().toString();
-//  Serial.println(addy);
   
   //determine if this user is connected to the AP or comming from the network the device is connected to
   //when connected to AP, configuration is not allowed
@@ -244,7 +243,7 @@ void setup() {
   WiFiManagerParameter custom_mqtt_topic("topic", "mqtt topic", mqtt_topic, 40);
 
   WiFiManagerParameter custom_dz_idx("dzidx", "Domoticz idx", dz_idx, 5);
-  WiFiManagerParameter custom_oh_itemid("ohitemid", "OpenHAB itenId", oh_itemid, 40);
+  WiFiManagerParameter custom_oh_itemid("ohitemid", "OpenHAB itemId", oh_itemid, 40);
 
   WiFiManagerParameter custom_text("<p>Fill the folowing values with your home assistant/ domoticz infromation. Username and password are optional</p>");
   wifiManager.addParameter(&custom_text);
@@ -353,7 +352,7 @@ void reconnect() {
   Serial.print(mqtt_port);
   Serial.print("...");
   
-  if (client.connect("DoorbellModernizr2x", mqtt_username, mqtt_password)) {
+  if (client.connect("DoorbellModernizr_2", mqtt_username, mqtt_password)) {
      Serial.println("connected");
      String("<div style=\"color:green;float:left\">connected</div>").toCharArray(mqtt_status,60);
      Serial.print("sending 'off' message to ");

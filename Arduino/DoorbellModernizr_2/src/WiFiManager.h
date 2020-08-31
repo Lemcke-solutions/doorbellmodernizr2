@@ -32,7 +32,7 @@ const char HTTP_FORM_START[] PROGMEM      = "<form method='get' action='wifisave
 const char HTTP_FORM_PARAM[] PROGMEM      = "<br/><input id='{i}' name='{n}' length={l} placeholder='{p}' value='{v}' {c}>";
 const char HTTP_FORM_END[] PROGMEM        = "<br/><button type='submit'>save</button></form>";
 const char HTTP_SCAN_LINK[] PROGMEM       = "<br/><div class=\"c\"><a href=\"/wifi\">Scan</a></div>";
-const char HTTP_SAVED[] PROGMEM           = "<div>Credentials Saved<br />Trying to connect doorbell to network.<br />If it fails reconnect to \"wifi doorbell\" access point to try again</div>";
+const char HTTP_SAVED[] PROGMEM           = "<div>Credentials Saved<br />Trying to connect the Doorbell modernizr to network.<br />If it fails reconnect to the \"Doorbell modernizr\" access point to try again</div>";
 const char HTTP_END[] PROGMEM             = "</div></body></html>";
 
 #define WIFI_MANAGER_MAX_PARAMS 20
@@ -169,7 +169,7 @@ class WiFiManager
     String        toStringIp(IPAddress ip);
 
     boolean       connect;
-    boolean       _debug = false;
+    boolean       _debug = true;
 
     void (*_apcallback)(WiFiManager*) = NULL;
     void (*_savecallback)(void) = NULL;
